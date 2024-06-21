@@ -1,7 +1,15 @@
 import os
 import cmlapi
 import json
+import base64
 from utils.check_dependency import check_gpu_enabled
+
+
+def generate_random_string(length=5):
+    random_bytes = os.urandom(length)
+    random_string = base64.b64encode(random_bytes).decode("utf-8")
+    return random_string[:length]
+
 
 client = cmlapi.default_client(
     url=os.getenv("CDSW_API_URL").replace("/api/v1", ""),
@@ -31,7 +39,7 @@ if check_gpu_enabled() == False:
         name="AI Chat with your documents",
         description="AI Chat with your documents",
         project_id=project.id,
-        subdomain="ai-chat-with-doc",
+        subdomain="ai-chat-with-doc" + generate_random_string(),
         script="3_app-run-python-script/front_end_app.py",
         cpu=6,
         memory=24,
@@ -46,7 +54,7 @@ else:
         name="AI Chat with your documents",
         description="AI Chat with your documents",
         project_id=project.id,
-        subdomain="ai-chat-with-doc",
+        subdomain="ai-chat-with-doc" + generate_random_string(),
         script="3_app-run-python-script/front_end_app.py",
         cpu=2,
         memory=16,
