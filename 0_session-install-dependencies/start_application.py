@@ -1,14 +1,13 @@
 import os
 import cmlapi
 import json
-import base64
+import random
+import string
 from utils.check_dependency import check_gpu_enabled
 
 
 def generate_random_string(length=5):
-    random_bytes = os.urandom(length)
-    random_string = base64.b64encode(random_bytes).decode("utf-8")
-    return random_string[:length]
+    return "".join(random.choices(string.ascii_lowercase, k=length))
 
 
 client = cmlapi.default_client(
