@@ -18,6 +18,6 @@ torch==2.2.2
 milvus==2.3.5
 unstructured==0.13.2
 spacy==3.7.4
-numpy==1.26.4
+numpy==1.24.3
 python-dotenv
 requests
