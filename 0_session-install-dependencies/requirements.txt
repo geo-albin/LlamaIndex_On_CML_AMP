@@ -40,7 +40,7 @@ milvus==2.3.5
 unstructured==0.13.2
 spacy==3.7.4
 
-numpy==1.26.4
-# pandas==2.1.4
+# numpy==1.26.4
+# # pandas==2.1.4
 python-dotenv
 requests
