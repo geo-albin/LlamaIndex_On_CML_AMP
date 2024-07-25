@@ -7,7 +7,8 @@ from llama_index.core import (
     Settings,
 )
 from llama_index.readers.file import UnstructuredReader, PDFReader
-from llama_index.readers.nougat_ocr import PDFNougatOCR
+
+# from llama_index.readers.nougat_ocr import PDFNougatOCR
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.vector_stores.milvus import MilvusVectorStore
 from huggingface_hub import hf_hub_download, snapshot_download
@@ -265,8 +266,8 @@ class CMLLLM:
             ".txt": UnstructuredReader(),
         }
 
-        if torch.cuda.is_available():
-            file_extractor[".pdf"] = PDFNougatOCR()
+        # if torch.cuda.is_available():
+        #     file_extractor[".pdf"] = PDFNougatOCR()
 
         print(f"collection = {collection_name}, questions = {questions}")
 
