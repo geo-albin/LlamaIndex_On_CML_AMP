@@ -21,7 +21,7 @@
 
 llama-index==0.10.29
 llama-index-cli==0.1.11
-llama-index-core==0.10.29
+llama-index-core==0.10.57
 llama-index-embeddings-huggingface==0.2.0
 llama-index-indices-managed-llama-cloud==0.1.5
 llama-index-legacy==0.9.48
