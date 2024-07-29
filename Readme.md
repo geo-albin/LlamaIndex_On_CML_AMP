@@ -1,11 +1,11 @@
 # Chat with your doc 
 
-This is an updated version of the [LLM Chatbot Augmented with Enterprise Data AMP](https://github.com/cloudera/CML_AMP_LLM_Chatbot_Augmented_with_Enterprise_Data/tree/main)
+This is an updated version of the [LLM Chatbot Augmented with Enterprise Data AMP](https://github.com/cloudera/CML_AMP_LLM_Chatbot_Augmented_with_Enterprise_Data/tree/main).
+
 This repository demonstrates how to use an open source pre-trained instruction-following LLM (Large Language Model) to build a ChatBot. The responses of the LLM are enhanced by giving it context from an internal knowledge base created from the documents uploaded by the users. This context is retrieved by using an open source Vector Database to do semantic search. 
 
 Watch the Chatbot in action [here](<>).
 
-![image](./images/app-screenshot.png)
 All the components of the application (knowledge base, context retrieval, prompt enhancement LLM) are running within CML. This application does not call any external model APIs nor require any additional training of an LLM. 
 
 > **IMPORTANT**: Please read the following before proceeding.  By configuring and launching this AMP, you will download TheBloke/Mistral-7B-Instruct-v0.2, which is a third party large language model (LLM) into your environment from the third party’s website.  Please see https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF for more information about the LLM, including the applicable license terms.  If you do not wish to download and install TheBloke/Mistral-7B-Instruct-v0.2, do not deploy this repository.  By deploying this repository, you acknowledge the foregoing statement and agree that Cloudera is not responsible or liable in any way for TheBloke/Mistral-7B-Instruct-v0.2. Author: Cloudera Inc.
@@ -27,12 +27,12 @@ All the components of the application (knowledge base, context retrieval, prompt
     * [AMP Failures](guides/troubleshooting.md#amp-failures)
     * [Limitations](guides/troubleshooting.md#limitations)
 
-## Enhancing Chatbot with Enterprise Context to reduce hallucination
-![image](./images/rag-architecture.png)
+## Enhancing Chatbot with Context to reduce hallucination
 When a user question is directly sent to the open-source LLM, there is increased potential for halliucinated responses based on the generic dataset the LLM was trained on. By enhancing the user input with context retrieved from a knowledge base, the LLM can more readily generate a response with factual content. This is a form of Retrieval Augmented Generation.
 
 For more detailed description of architectures like this and how it can enhance NLP tasks see this paper: [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks
 ](https://arxiv.org/abs/2005.11401)
+
 
 ### Retrieval Augmented Generation (RAG) Architecture
 - Document Ingest into Vector Database
@@ -45,6 +45,12 @@ For more detailed description of architectures like this and how it can enhance 
 - Submit Enhanced prompt to LLM to generate a factual response
   - Create a prompt including the retrieved context and the user question
   - Stream the LLM response in a web application
+
+#### Document Ingestion
+![image](./assets/images/ingest.png)
+
+#### Retrieval Augmented Generation
+![image](./assets/images/rag.png)
 
 ## Requirements
 #### CML Instance Types
