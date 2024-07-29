@@ -85,6 +85,7 @@ The project is organized with the following folder structure:
 ├── 2_job-download-models/    # Setup scripts for downloading pre-trained models
 ├── 3_job-populate-vectordb/  # Setup scripts for initializing and populating a vector database with context documents
 ├── 4_app/                    # Backend scripts for launching chat webapp and making requests to locally running pre-trained models
+|── assets/                   # Static assets for the application
 ├── utils/                    # Python module for functions used for interacting with pre-trained models
 ├── images/
 ├── README.md
