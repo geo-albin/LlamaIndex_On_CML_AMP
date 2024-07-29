@@ -2,7 +2,9 @@
 
 This is an updated version of the [LLM Chatbot Augmented with Enterprise Data AMP](https://github.com/cloudera/CML_AMP_LLM_Chatbot_Augmented_with_Enterprise_Data/tree/main).
 
-This repository demonstrates how to use an open source pre-trained instruction-following LLM (Large Language Model) to build a ChatBot. The responses of the LLM are enhanced by giving it context from an internal knowledge base created from the documents uploaded by the users. This context is retrieved by using an open source Vector Database to do semantic search. 
+This repository demonstrates how to use an open source pre-trained instruction-following LLM (Large Language Model) to build a ChatBot. The responses of the LLM are enhanced by giving it context from an internal knowledge base created from the documents uploaded by the users. This context is retrieved by using an open source Vector Database to do semantic search.
+
+Compared to the original LLM Chatbot Augmented with Enterprise Data AMP, this version added the support for user document ingestion, automatic question generation and result streaming. It also uses llama index for RAG pipeline implementation.
 
 Watch the Chatbot in action [here](<>).
 
@@ -122,6 +124,8 @@ Definition of the application `CML LLM Chatbot`
 - [TheBloke/Mistral-7B-Instruct-v0.2-GGUF](https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF)
    - Instruction-following Large Language Model
 - [Hugging Face transformers library](https://pypi.org/project/transformers/)
+#### RAG pipeline implementation
+- [LlamaIndex](https://docs.llamaindex.ai/en/stable/)
 #### Vector Database
 - [Milvus](https://github.com/milvus-io/milvus)
 #### Chat Frontend
