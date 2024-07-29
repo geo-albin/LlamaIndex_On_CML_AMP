@@ -21,14 +21,6 @@ All the components of the application (knowledge base, context retrieval, prompt
   * [Implementation](#implementation)
 * [Technologies Used](#technologies-used)
 
-#### Guides
-* [Customization](guides/customization.md)
-    * [Knowledgebase](guides/customization.md#knowledgebase)
-    * [Models](guides/customization.md#Model)
-* [Troubleshooting](guides/troubleshooting.md)
-    * [AMP Failures](guides/troubleshooting.md#amp-failures)
-    * [Limitations](guides/troubleshooting.md#limitations)
-
 ## Enhancing Chatbot with Context to reduce hallucination
 When a user question is directly sent to the open-source LLM, there is increased potential for halliucinated responses based on the generic dataset the LLM was trained on. By enhancing the user input with context retrieved from a knowledge base, the LLM can more readily generate a response with factual content. This is a form of Retrieval Augmented Generation.
 
